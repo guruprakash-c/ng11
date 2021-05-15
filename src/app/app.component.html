@@ -1,1 +1,11 @@
 <headersec></headersec>
+<main>
+
+  <div [ngSwitch]="isAdded" title="{{isAdded}}">
+    <section *ngSwitchCase="1">Case #1</section>
+    <section *ngSwitchCase="2">Case #2</section>
+    <section *ngSwitchCase="3">Case #3</section>
+    <section *ngSwitchCase="4">Case #4</section>
+    <section *ngSwitchDefault>Case Default</section>
+  </div>
+</main>

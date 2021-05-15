@@ -13,19 +13,35 @@
       <span class="la la-bars"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-      </ul>
+      <span *ngIf="userType=='Admin'; then adminMenu; else userMenu;"></span>
+      <ng-template #adminMenu>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+      </ng-template>
+      <ng-template #userMenu>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngFor="let m of menuItems">
+          <li class="nav-item" *ngIf="m.home">
+            <a class="nav-link" aria-current="page" href="{{m.home.link}}">{{m.home.textToDisplay}}</a>
+          </li>
+          <li class="nav-item" *ngIf="m.about">
+            <a class="nav-link" href="#" href="{{m.about.link}}">{{m.about.textToDisplay}}</a>
+          </li>
+          <li class="nav-item" *ngIf="m.blog">
+            <a class="nav-link" href="#" href="{{m.blog.link}}">{{m.blog.textToDisplay}}</a>
+          </li>
+        </ul>
+      </ng-template>
       <span class="navbar-text">
-        Navbar text with an inline element
+        Welcome {{userType}}
       </span>
     </div>
   </div>
