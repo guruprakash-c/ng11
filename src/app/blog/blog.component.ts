@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-
-  constructor() { }
-  articleCount = 1;
-  ngOnInit() {
+  searchFilters = [];
+  constructor(private pgTitle: Title, private qParams: ActivatedRoute) {
+    this.pgTitle.setTitle('Blog Posts - Angular 10 Tutorials');
+    this.qParams.queryParams.subscribe(p => {
+      this.searchFilters[0] = p.k;
+      this.searchFilters[1] = p.c;
+      this.searchFilters[2] = p.a;
+    });
   }
+  articleCount = 1;
 
+  ngOnInit() {}
 }

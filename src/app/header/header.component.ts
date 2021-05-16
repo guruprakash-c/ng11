@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit, OnChanges {
         hasChild: false
       },
       blog: {
-        link: '/blog',
+        link: '/blog/posts/',
         textToDisplay: 'Blog Posts',
         isActive: false,
         hasChild: true

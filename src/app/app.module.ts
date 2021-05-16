@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { BlogComponent } from './blog/blog.component';
+import { BlogPostComponent } from './blog/blog-post/blog-post.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
@@ -18,7 +19,8 @@ import { BlogComponent } from './blog/blog.component';
     HeaderComponent,
     AboutusComponent,
     ContactusComponent,
-    BlogComponent
+    BlogComponent,
+    BlogPostComponent
   ],
   bootstrap: [AppComponent]
 })
