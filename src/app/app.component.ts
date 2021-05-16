@@ -7,15 +7,19 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
+  todaysDate = new Date();
   isAdded = randomVals(1, 6);
   currVal = 0;
+  userName = '';
   OnChange = (eve: any) => {
     this.currVal = parseInt(eve.target.value) + 1;
     return this.currVal;
   };
   OnBlur = (e: any)=>{
+    debugger;
     if(e.target.value != undefined && e.target.value != null && e.target.value != ''){
-      alert('You have entered '+e.target.value.length+' character(s). ');
+      this.userName = e.target.value; 
+      alert('You have entered '+this.userName.length+' character(s). ');
     }
     else{
       e.target.focus();

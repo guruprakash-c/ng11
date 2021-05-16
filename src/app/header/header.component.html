@@ -31,10 +31,10 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngFor="let m of menuItems">
           <li class="nav-item" *ngIf="m.home">
             <a class="nav-link" [attr.aria-current]="'curPg'" href="{{m.home.link}}"
-              [title]="m.home.textToDisplay">{{m.home.textToDisplay}}</a>
+              [title]="m.home.textToDisplay">{{m.home.textToDisplay | uppercase}}</a>
           </li>
           <li class="nav-item" *ngIf="m.about">
-            <a class="nav-link" href="{{m.about.link}}" [title]="m.about.textToDisplay">{{m.about.textToDisplay}}</a>
+            <a class="nav-link" href="{{m.about.link}}" [title]="m.about.textToDisplay">{{m.about.textToDisplay | lowercase}}</a>
           </li>
           <li class="nav-item" *ngIf="m.blog">
             <a class="nav-link" href="{{m.blog.link}}" [title]="m.blog.textToDisplay">{{m.blog.textToDisplay}}</a>
@@ -47,3 +47,4 @@
     </div>
   </div>
 </nav>
+<!-- {{menuItems | json}} -->
