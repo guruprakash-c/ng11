@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Recently Added Post(s)</h1>
+  <section class="row">
+    <article *ngIf="articleCount > 0" class="col-md-12 md-offset-2">
+      <dl class="row">
+        <dt class="col-sm-3">Description lists</dt>
+        <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+        <dt class="col-sm-3"><a href="#">Term</a></dt>
+        <dd class="col-sm-9">
+          <p>Definition for the term.</p>
+          <p>And some more placeholder definition text.</p>
+        </dd>
+        <dt class="col-sm-3"><a href="#">Another term</a></dt>
+        <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
+        <dt class="col-sm-3 text-truncate"><a href="#">Truncated term is truncated</a></dt>
+        <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+        <dt class="col-sm-3 text-truncate"><a href="#">Truncated term is truncated</a></dt>
+        <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+      </dl>
+    </article>
+  </section>
+</div>
