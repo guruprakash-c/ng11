@@ -8,6 +8,7 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit, OnChanges {
   constructor() {}
   userType = 'Publisher';
+  curPg = 'page';
   menuItems = [
     {
       home: {

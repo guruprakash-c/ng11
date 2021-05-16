@@ -8,4 +8,8 @@
     <section *ngSwitchCase="4">Case #4</section>
     <section *ngSwitchDefault>Case Default</section>
   </div>
+  <h3>Event Binding</h3>
+  <input type="range" (change)="OnChange($event)" min="1" max="5" value="1" step="1"/>
+  <p class="bg-info text-white rounded-pill px-2 py-2" *ngIf="currVal != 0">Your value is: {{currVal}}</p>
+  <input type="text" (blur)="OnBlur($event)" class="form-control"/>
 </main>
