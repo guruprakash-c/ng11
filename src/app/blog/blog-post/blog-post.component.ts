@@ -17,7 +17,7 @@ export class BlogPostComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private pgTitle: Title) {
     this.activatedRoute.params.subscribe(params => {
       const qryParams = params;
-      this.posts.postId = qryParams.pId;
+      this.posts.postId = qryParams.postId;
     });
   }
 

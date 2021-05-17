@@ -11,6 +11,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogPostComponent } from './blog/blog-post/blog-post.component';
 import { AppErrorComponent } from './app-error/app-error.component';
+import { SubscriberGuard } from './subscriber.guard';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
@@ -24,6 +25,7 @@ import { AppErrorComponent } from './app-error/app-error.component';
     BlogPostComponent,
     AppErrorComponent
   ],
+  providers: [AuthenticatorResponse, SubscriberGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -12,9 +12,10 @@ export class BlogComponent implements OnInit {
   constructor(private pgTitle: Title, private qParams: ActivatedRoute) {
     this.pgTitle.setTitle('Blog Posts - Angular 10 Tutorials');
     this.qParams.queryParams.subscribe(p => {
-      this.searchFilters[0] = p.k;
-      this.searchFilters[1] = p.c;
-      this.searchFilters[2] = p.a;
+      // this.searchFilters[0] = p.k;
+      // this.searchFilters[1] = p.c;
+      // this.searchFilters[2] = p.a;
+      console.log(p);
     });
   }
   articleCount = 1;

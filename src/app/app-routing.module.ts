@@ -2,19 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AppErrorComponent } from './app-error/app-error.component';
+import { AuthGuard } from './auth.guard';
 import { BlogPostComponent } from './blog/blog-post/blog-post.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { SubscriberGuard } from './subscriber.guard';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
     path: '**',
-    redirectTo: 'error/:err'
+    redirectTo: 'error'
   },
   {
     path: 'error',
@@ -36,16 +33,18 @@ const routes: Routes = [
   },
   {
     path: 'blog',
-    // redirectTo: 'contactus',
-    // pathMatch: 'full',
+    canActivate: [AuthGuard],
     children: [
       {
-        path: 'posts',
-        component: BlogComponent
-      },
-      {
-        path: 'posts/:pId',
-        component: BlogPostComponent
+        path: '',
+        component: BlogComponent,
+        canActivateChild: [SubscriberGuard],
+        children: [
+          {
+            path: 'blog/:postId',
+            component: BlogPostComponent
+          }
+        ]
       }
     ]
   },
