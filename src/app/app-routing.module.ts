@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AppErrorComponent } from './app-error/app-error.component';
 import { BlogPostComponent } from './blog/blog-post/blog-post.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactusComponent } from './contactus/contactus.component';
@@ -12,8 +13,21 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: '**',
+    redirectTo: 'error/:err'
+  },
+  {
+    path: 'error',
+    children: [
+      {
+        path: 'error/:err',
+        component: AppErrorComponent
+      }
+    ]
+  },
+  {
     path: 'home',
-    redirectTo: 'contactus',
+    redirectTo: 'error',
     pathMatch: 'full'
   },
   {

@@ -10,6 +10,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogPostComponent } from './blog/blog-post/blog-post.component';
+import { AppErrorComponent } from './app-error/app-error.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
@@ -20,7 +21,8 @@ import { BlogPostComponent } from './blog/blog-post/blog-post.component';
     AboutusComponent,
     ContactusComponent,
     BlogComponent,
-    BlogPostComponent
+    BlogPostComponent,
+    AppErrorComponent
   ],
   bootstrap: [AppComponent]
 })
