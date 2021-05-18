@@ -13,12 +13,12 @@ import { BlogPostComponent } from './blog/blog-post/blog-post.component';
 import { AppErrorComponent } from './app-error/app-error.component';
 import { SubscriberGuard } from './subscriber.guard';
 import { AuthGuard } from './auth.guard';
-import { PostarticlesModule } from './postarticles/postarticles.module';
-import { PostArticlesGuard } from './post-articles.guard';
 import { UnsavedGuard } from './unsaved.guard';
+import { TFFormsComponent } from './tfforms/tfforms.component';
+import { RFFormsComponent } from './rfforms/rfforms.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule, PostarticlesModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   declarations: [
     AppComponent,
     HelloComponent,
@@ -27,13 +27,14 @@ import { UnsavedGuard } from './unsaved.guard';
     ContactusComponent,
     BlogComponent,
     BlogPostComponent,
-    AppErrorComponent
+    AppErrorComponent,
+    TFFormsComponent,
+    RFFormsComponent
   ],
   providers: [
     AuthenticatorResponse,
     SubscriberGuard,
     AuthGuard,
-    PostArticlesGuard,
     UnsavedGuard
   ],
   bootstrap: [AppComponent]

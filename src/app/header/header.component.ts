@@ -28,6 +28,12 @@ export class HeaderComponent implements OnInit, OnChanges {
         textToDisplay: 'Blog Posts',
         isActive: false,
         hasChild: true
+      },
+      forms: {
+        link: '/forms',
+        textToDisplay: 'Angular Forms',
+        isActive: false,
+        hasChild: false
       }
     }
   ];

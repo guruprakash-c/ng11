@@ -6,9 +6,10 @@ import { AuthGuard } from './auth.guard';
 import { BlogPostComponent } from './blog/blog-post/blog-post.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactusComponent } from './contactus/contactus.component';
-import { PostArticlesGuard } from './post-articles.guard';
 import { ResolveExGuard } from './resolve-ex.guard';
+import { RFFormsComponent } from './rfforms/rfforms.component';
 import { SubscriberGuard } from './subscriber.guard';
+import { TFFormsComponent } from './tfforms/tfforms.component';
 import { UnsavedGuard } from './unsaved.guard';
 
 const routes: Routes = [
@@ -63,12 +64,11 @@ const routes: Routes = [
     component: ContactusComponent
   },
   {
-    path: 'postarticles',
-    canLoad: [PostArticlesGuard],
-    loadChildren: () =>
-      import('./postarticles/postarticles.module').then(
-        p => p.PostarticlesModule
-      )
+    path: 'forms',
+    children: [
+      { path: '', component: TFFormsComponent},
+      { path: 'rforms', component: RFFormsComponent}
+    ]
   }
 ];
 
