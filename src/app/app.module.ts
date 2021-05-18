@@ -13,9 +13,12 @@ import { BlogPostComponent } from './blog/blog-post/blog-post.component';
 import { AppErrorComponent } from './app-error/app-error.component';
 import { SubscriberGuard } from './subscriber.guard';
 import { AuthGuard } from './auth.guard';
+import { PostarticlesModule } from './postarticles/postarticles.module';
+import { PostArticlesGuard } from './post-articles.guard';
+import { UnsavedGuard } from './unsaved.guard';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, PostarticlesModule],
   declarations: [
     AppComponent,
     HelloComponent,
@@ -26,7 +29,13 @@ import { AuthGuard } from './auth.guard';
     BlogPostComponent,
     AppErrorComponent
   ],
-  providers: [AuthenticatorResponse, SubscriberGuard, AuthGuard],
+  providers: [
+    AuthenticatorResponse,
+    SubscriberGuard,
+    AuthGuard,
+    PostArticlesGuard,
+    UnsavedGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

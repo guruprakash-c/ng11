@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-aboutus',
@@ -7,9 +8,13 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./aboutus.component.css']
 })
 export class AboutusComponent implements OnInit {
-  constructor(private pgTitle: Title) {
+  isDirty = true;
+  constructor(private pgTitle: Title, private activatedRoute: ActivatedRoute) {
     this.pgTitle.setTitle('About Us - Angular 10 Tutorials');
   }
-
-  ngOnInit() {}
+  teamData = [];
+  ngOnInit() {
+    
+    this.teamData[0] = this.activatedRoute.snapshot.data;
+  }
 }

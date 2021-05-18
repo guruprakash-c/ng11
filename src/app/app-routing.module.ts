@@ -6,7 +6,10 @@ import { AuthGuard } from './auth.guard';
 import { BlogPostComponent } from './blog/blog-post/blog-post.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { PostArticlesGuard } from './post-articles.guard';
+import { ResolveExGuard } from './resolve-ex.guard';
 import { SubscriberGuard } from './subscriber.guard';
+import { UnsavedGuard } from './unsaved.guard';
 
 const routes: Routes = [
   // {
@@ -29,7 +32,11 @@ const routes: Routes = [
   // },
   {
     path: 'aboutus',
-    component: AboutusComponent
+    component: AboutusComponent,
+    canDeactivate: [UnsavedGuard],
+    resolve: {
+      data: ResolveExGuard
+    }
   },
   {
     path: 'blog',
@@ -54,6 +61,14 @@ const routes: Routes = [
   {
     path: 'contactus',
     component: ContactusComponent
+  },
+  {
+    path: 'postarticles',
+    canLoad: [PostArticlesGuard],
+    loadChildren: () =>
+      import('./postarticles/postarticles.module').then(
+        p => p.PostarticlesModule
+      )
   }
 ];
 
