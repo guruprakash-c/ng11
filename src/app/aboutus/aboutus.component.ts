@@ -14,7 +14,6 @@ export class AboutusComponent implements OnInit {
   }
   teamData = [];
   ngOnInit() {
-    
-    this.teamData[0] = this.activatedRoute.snapshot.data;
+    this.teamData = this.activatedRoute.snapshot.data.data;
   }
 }
