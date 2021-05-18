@@ -9,6 +9,8 @@ import { Title } from '@angular/platform-browser';
 })
 export class RFFormsComponent implements OnInit {
   addUserForm: FormGroup;
+  userName: any = '';
+  userPaswd: any = '';
   constructor(private pgTitle: Title) {
     this.pgTitle.setTitle('Reactive Forms - Angular 10 Tutrials');
   }
