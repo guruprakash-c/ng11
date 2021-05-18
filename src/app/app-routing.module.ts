@@ -9,24 +9,24 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { SubscriberGuard } from './subscriber.guard';
 
 const routes: Routes = [
-  {
-    path: '**',
-    redirectTo: 'error'
-  },
-  {
-    path: 'error',
-    children: [
-      {
-        path: 'error/:err',
-        component: AppErrorComponent
-      }
-    ]
-  },
-  {
-    path: 'home',
-    redirectTo: 'error',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'error'
+  // },
+  // {
+  //   path: 'error',
+  //   children: [
+  //     {
+  //       path: 'error/:err',
+  //       component: AppErrorComponent
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: 'home',
+  //   redirectTo: 'error',
+  //   pathMatch: 'full'
+  // },
   {
     path: 'aboutus',
     component: AboutusComponent
@@ -37,7 +37,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: BlogComponent,
+        component: BlogComponent
+      },
+      {
+        path: '',
         canActivateChild: [SubscriberGuard],
         children: [
           {

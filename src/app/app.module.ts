@@ -12,6 +12,7 @@ import { BlogComponent } from './blog/blog.component';
 import { BlogPostComponent } from './blog/blog-post/blog-post.component';
 import { AppErrorComponent } from './app-error/app-error.component';
 import { SubscriberGuard } from './subscriber.guard';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
@@ -25,7 +26,7 @@ import { SubscriberGuard } from './subscriber.guard';
     BlogPostComponent,
     AppErrorComponent
   ],
-  providers: [AuthenticatorResponse, SubscriberGuard],
+  providers: [AuthenticatorResponse, SubscriberGuard, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
