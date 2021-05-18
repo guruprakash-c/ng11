@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-tfforms',
@@ -8,7 +9,9 @@ import { NgForm } from '@angular/forms';
 })
 export class TFFormsComponent implements OnInit {
   fname: string = '';
-  constructor() {}
+  constructor(private pgTitle:Title) {
+    this.pgTitle.setTitle('Template Driven Forms - Angular 10 Tutrials');
+  }
 
   ngOnInit() {}
   saveForm = (dtls: NgForm) => {
