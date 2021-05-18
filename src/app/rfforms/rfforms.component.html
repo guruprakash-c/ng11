@@ -1,7 +1,8 @@
 <h1>Reactive Forms</h1>
-<form #regform="ngForm">
-  <input type="text" name="fname" required/>
-  <button type="submit" [disabled]="!regform.valid">Save</button>
+<form [fromGroup]="addUserForm">
+  <input type="text" [formControlName]="userName"/>
+  <input type="password" [formControlName]="userPaswd"/>
+  <button type="submit">Signin</button>
   <button type="button">Reset</button>
   <button type="button">Load</button>
 </form>

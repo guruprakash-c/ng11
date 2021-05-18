@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +18,7 @@ import { TFFormsComponent } from './tfforms/tfforms.component';
 import { RFFormsComponent } from './rfforms/rfforms.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, ReactiveFormsModule, FormsModule, AppRoutingModule],
   declarations: [
     AppComponent,
     HelloComponent,
@@ -31,12 +31,7 @@ import { RFFormsComponent } from './rfforms/rfforms.component';
     TFFormsComponent,
     RFFormsComponent
   ],
-  providers: [
-    AuthenticatorResponse,
-    SubscriberGuard,
-    AuthGuard,
-    UnsavedGuard
-  ],
+  providers: [AuthenticatorResponse, SubscriberGuard, AuthGuard, UnsavedGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
