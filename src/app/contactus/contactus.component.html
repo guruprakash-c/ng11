@@ -20,6 +20,16 @@
           <button type="reset" class="btn btn-danger btn-sm ms-1">Cancel</button>
         </div>
       </form>
+      <section>
+        <div class="blog-posts">
+          <ol>
+            <li *ngFor="let p of posts$">
+              <a href="/posts?id={{ p.id }}">{{ p.title }}</a>
+              <p>{{ p.body }}</p>
+            </li>
+          </ol>
+        </div>
+      </section>
     </div>
   </section>
 </div>
